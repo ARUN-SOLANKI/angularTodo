@@ -52,6 +52,19 @@ export class ContainerComponent{
    }
   }
 
+  checkValue(e : Event , id : number){
+    const data = this.todoArray.map((item : {title :string,id:number, checked :boolean})=>{
+      if(id == item.id){
+        return{...item , checked : (<HTMLInputElement>e.target).checked}
+      }else{
+        return item
+      }
+    })
+
+    localStorage.setItem('todoArray' , JSON.stringify(data))
+    this.todoArray = data;
+  }
+
   updateTodo(){}
 
 }
