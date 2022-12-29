@@ -1,17 +1,20 @@
 <div class="container">
   <div class="inputDiv">
     <input type="text" (input)="onChange($event)" class="inputField" placeholder="Write Something...." [value]="inputValue" />
-    <button (click)="addTodo()" class="addButton">add Todo</button>
-    <!-- <button (click)="updateTodo()" class="addButton">update Todo</button> -->
+    <button (click)="addTodo()" *ngIf="!isEdit" class="addButton">add Todo</button>
+    <button (click)="updateTodo()" *ngIf="isEdit" class="updateButton">update Todo</button>
   </div>
+  <div class="filtercomp"><app-filtercomponent (filterEvent)="filterItems($event)"></app-filtercomponent></div>
   <div class="todoItems" *ngIf="todoArray.length > 0">
-      <div *ngFor="let item of todoArray" class="todos">
+    <ng-container *ngFor="let item of todoArray">
+      <div  *ngIf="selectedFilterOption == 'All' && item || selectedFilterOption == 'Complete' && item.checked || selectedFilterOption == 'Incomplete' && item.checked == false " class="todos">
         <input type="checkbox" (change)="checkValue($event , item.id)" [checked]="item.checked" />
         <div class="headContainer">
           <h3 class="itemTitle">{{item?.title}}</h3>
         </div>
         <button (click)="onEdit(item.id)" class="editItem">Edit</button> 
         <button (click)="onDelete(item.id)" class="deleteItem">delete</button> 
-      <div>
+      </div>
+    </ng-container>
   </div>
 </div>

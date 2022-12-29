@@ -1,0 +1,14 @@
+<div class="filterContainer">
+  <div>
+    <input type="radio" id="all" name="filterTodo" [(ngModel)]="selectedFilter" value="All" (change)="selected($event)">
+    <label for="all" class="label">All</label>
+  </div>
+  <div>
+    <input type="radio" id="completed" name="filterTodo" [(ngModel)]="selectedFilter" value="Complete" (change)="selected($event)">
+    <label for="completed" class="label">Complete</label>
+  </div>
+  <div>
+    <input type="radio" id="incomplete" name="filterTodo" [(ngModel)]="selectedFilter" value="Incomplete" (change)="selected($event)">
+    <label for="incomplete" class="label">Incomplete</label>
+  </div>
+</div>

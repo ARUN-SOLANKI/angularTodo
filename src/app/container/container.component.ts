@@ -11,10 +11,12 @@ export class ContainerComponent{
 
   inputValue : string ="";
   err : string = "";
+  isEdit: boolean = false;
   todoArray : {title :string,id:number, checked :boolean}[] = [];
+  selectedFilterOption : string ='All'
+  editId : number = NaN;
   ngOnInit(){
     const data = localStorage.getItem('todoArray')
-    console.log(data)
     this.todoArray = data !== null && JSON.parse(data)
   }
 
@@ -44,12 +46,15 @@ export class ContainerComponent{
     this.todoArray=arr
   }
   onEdit(id : number){
-   for(let item of this.todoArray){
-    if(item.id === id){
-      this.inputValue = item.title;
-      break
-    }
-   }
+    this.isEdit = true;
+    this.editId = id;
+    for(let item of this.todoArray){
+      if(item.id === id){
+        this.inputValue = item.title;
+        break
+      }
+     }
+   
   }
 
   checkValue(e : Event , id : number){
@@ -65,6 +70,25 @@ export class ContainerComponent{
     this.todoArray = data;
   }
 
-  updateTodo(){}
+  filterItems(e : string){
+    this.selectedFilterOption = e
+  }
+  
+
+  updateTodo(){
+    const data = this.todoArray.map(item=>{
+      if(item.id == this.editId){
+        item.title = this.inputValue
+        return item
+      }else{
+        return item
+      }
+    })
+    localStorage.setItem('todoArray' , JSON.stringify(data))
+    this.todoArray = data;
+    this.isEdit = false;
+    this.inputValue = ""
+    this.editId = NaN;
+  }
 
 }

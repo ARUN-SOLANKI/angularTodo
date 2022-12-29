@@ -14,6 +14,14 @@
   padding: 20px;
   border-radius: 10px;
 }
+.filtercomp{
+  width: 40rem;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 10px;
+}
 .inputField{
 width: 78%;
 height: 40px;
@@ -26,7 +34,30 @@ padding-left: 10px;
   background-color: rgb(72, 72, 246);
   padding: 7px 20px;
   border: none;
+}
+.addButton:hover{
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(72, 72, 246);
+  background-color: #fff;
+  border: 1px solid rgb(72, 72, 246);
+  padding: 7px 20px;
+}
 
+.updateButton{
+  font-size: 20px;
+  color: #fff;
+  background-color: rgb(72, 72, 246);
+  padding: 7px 10px;
+  border: none;
+}
+.updateButton:hover{
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(72, 72, 246);
+  background-color: #fff;
+  padding: 7px 10px;
+  border: 1px solid rgb(72, 72, 246);
 }
 .todoItems{
   width: 40rem;
@@ -63,9 +94,19 @@ padding-left: 10px;
   border: none;
   color: #fff;
 }
+.deleteItem{
+ cursor: pointer;
+}
 .editItem{
   padding: 10px 20px;
   background-color: rgb(72, 72, 246);
   border: none;
   color: #fff;
+}
+.editItem:hover{
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color:#fff;
+  border: 1px solid  rgb(72, 72, 246);
+  color:  rgb(72, 72, 246);
 }

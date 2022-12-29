@@ -1,0 +1,12 @@
+.filterContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.label{
+  font-size: 18px;
+  color: #3471ff;
+  margin-left: 10px;
+  cursor: pointer;
+}
