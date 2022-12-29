@@ -79,6 +79,7 @@ export class ContainerComponent{
     const data = this.todoArray.map(item=>{
       if(item.id == this.editId){
         item.title = this.inputValue
+        item.checked = false
         return item
       }else{
         return item
