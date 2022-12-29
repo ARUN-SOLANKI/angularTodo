@@ -4,7 +4,10 @@
     <button (click)="addTodo()" *ngIf="!isEdit" class="addButton">add Todo</button>
     <button (click)="updateTodo()" *ngIf="isEdit" class="updateButton">update Todo</button>
   </div>
-  <div class="filtercomp"><app-filtercomponent (filterEvent)="filterItems($event)"></app-filtercomponent></div>
+  <div class="filtercomp" *ngIf="todoArray.length != 0"><app-filtercomponent (filterEvent)="filterItems($event)"></app-filtercomponent></div>
+  <div class="empltyArray" *ngIf="todoArray.length == 0">
+    <div class="emptyText">Please Add Some Todo Tasks...</div>
+  </div>
   <div class="todoItems" *ngIf="todoArray.length > 0">
     <ng-container *ngFor="let item of todoArray">
       <div  *ngIf="selectedFilterOption == 'All' && item || selectedFilterOption == 'Complete' && item.checked || selectedFilterOption == 'Incomplete' && item.checked == false " class="todos">

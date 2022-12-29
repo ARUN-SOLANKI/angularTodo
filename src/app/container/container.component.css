@@ -22,42 +22,54 @@
   padding: 20px;
   border-radius: 10px;
 }
+.empltyArray{
+  width: 40rem;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
 .inputField{
 width: 78%;
 height: 40px;
 font-size: 20px;
 padding-left: 10px;
 }
+.inputField:focus{
+  outline : none;
+  }
 .addButton{
   font-size: 20px;
   color: #fff;
-  background-color: rgb(72, 72, 246);
+  background-color: #3471ff;
   padding: 7px 20px;
   border: none;
 }
 .addButton:hover{
   cursor: pointer;
   font-size: 20px;
-  color: rgb(72, 72, 246);
+  color: #3471ff;
   background-color: #fff;
-  border: 1px solid rgb(72, 72, 246);
+  border: 1px solid #3471ff;
   padding: 7px 20px;
 }
 
 .updateButton{
   font-size: 20px;
   color: #fff;
-  background-color: rgb(72, 72, 246);
+  background-color: #3471ff;
   padding: 7px 10px;
   border: none;
 }
 .updateButton:hover{
   cursor: pointer;
   font-size: 20px;
-  color: rgb(72, 72, 246);
+  color: #3471ff;
   background-color: #fff;
   padding: 7px 10px;
-  border: 1px solid rgb(72, 72, 246);
+  border: 1px solid #3471ff;
 }
 .todoItems{
   width: 40rem;
@@ -99,7 +111,7 @@ padding-left: 10px;
 }
 .editItem{
   padding: 10px 20px;
-  background-color: rgb(72, 72, 246);
+  background-color: #3471ff;
   border: none;
   color: #fff;
 }
@@ -107,6 +119,11 @@ padding-left: 10px;
   cursor: pointer;
   padding: 10px 20px;
   background-color:#fff;
-  border: 1px solid  rgb(72, 72, 246);
-  color:  rgb(72, 72, 246);
+  border: 1px solid  #3471ff;
+  color:  #3471ff;
+}
+.emptyText{
+  font-size: 20px;
+  color: red;
+  font-weight: 700;
 }
